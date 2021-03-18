@@ -1,0 +1,22 @@
+[package]
+name = "rust-timescale-sqlx-rocket"
+version = "0.1.0"
+authors = ["Sven-Hendrik Haase <svenstaro@gmail.com>"]
+edition = "2018"
+default-run = "server"
+
+[dependencies]
+rocket = { git = "https://github.com/SergioBenitez/Rocket.git" }
+rocket_contrib = { git = "https://github.com/SergioBenitez/Rocket.git"  }
+sqlx = { version = "0.5", features = [ "runtime-tokio-rustls", "postgres", "macros", "chrono", "uuid" ] }
+serde = "1"
+serde_derive = "1"
+serde_json = "1"
+chrono = { version = "0.4", features = [ "serde" ] }
+uuid = { version = "0.8", features = [ "serde", "v4" ] }
+dotenv = "0.15"
+dotenv_codegen = "0.15"
+
+# For client only:
+reqwest = { version = "0.11", features = [ "json" ] }
+tokio = { version = "1", features = [ "full" ] }
